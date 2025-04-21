@@ -1,3 +1,50 @@
-baseURL: https://example.org/
+baseURL: https://blog.bunni.xyz/
 languageCode: en-us
-title: My New Hugo Site
+title: Bunni Diaries
+
+theme: ["PaperMod"]
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+params:
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: false
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: true
+  math: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \$
+              - \$
+        enable: true
